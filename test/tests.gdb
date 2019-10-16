@@ -27,13 +27,6 @@ echo ======================================================\n
 echo Running all tests..."\n\n
 
 # Example test:
-
-
-
-
-
-
- mple test:
 test "PINA: 0x03, PINA: 0x02 => PORTC: 0x01"
 set state = start
 setPINA 0x03
@@ -46,6 +39,7 @@ expectPORTC 0x01
 checkResult
 
 test "PINA: 0x03, PINA: 0x01 => PORTC: 0x00"
+set state = start
 setPINA 0x03
 continue 2
 setPINA 0x01
@@ -54,6 +48,7 @@ expectPORTC 0x00
 checkResult
 
 test "PINA: 0x03, PINA: 0x02, PINA: 0x80 => PORTC: 0x00"
+set state = start
 setPINA 0x03
 continue 2
 setPINA 0x02
@@ -64,6 +59,7 @@ expectPORTC 0x00
 checkResult
 
 test "PINA: 0x01, PINA: 0x02 => PORTC: 0x00"
+set state = start
 setPINA 0x01
 continue 2
 setPINA 0x02

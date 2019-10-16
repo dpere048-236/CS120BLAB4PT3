@@ -1,4 +1,4 @@
-/*	Author: dpere048
+/*	Author: David Perez dpere048@ucr.edu
  *  Partner(s) Name: 
  *	Lab Section:
  *	Assignment: Lab #  Exercise #
