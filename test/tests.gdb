@@ -33,7 +33,45 @@ echo Running all tests..."\n\n
 
 
 
-# Add tests below
+ mple test:
+test "PINA: 0x03, PINA: 0x02 => PORTC: 0x01"
+set state = start
+setPINA 0x03
+continue 2
+setPINA 0x00
+continue 2
+setPINA 0x02
+continue 2
+expectPORTC 0x01
+checkResult
+
+test "PINA: 0x03, PINA: 0x01 => PORTC: 0x00"
+setPINA 0x03
+continue 2
+setPINA 0x01
+continue 2
+expectPORTC 0x00
+checkResult
+
+test "PINA: 0x03, PINA: 0x02, PINA: 0x80 => PORTC: 0x00"
+setPINA 0x03
+continue 2
+setPINA 0x02
+continue 2
+setPINA 0x80
+continue 2
+expectPORTC 0x00
+checkResult
+
+test "PINA: 0x01, PINA: 0x02 => PORTC: 0x00"
+setPINA 0x01
+continue 2
+setPINA 0x02
+continue 2
+expectPORTC 0x00
+checkResult
+
+Add tests below
 
 # Report on how many tests passed/tests ran
 set $passed=$tests-$failed
